@@ -1,0 +1,136 @@
+{
+  "project_name": "E26 Media",
+  "theme": "Light",
+  "archetype": "Archetype 4 (Swiss & High-Contrast) + Modern Corporate Tech Hybrid",
+  "design_philosophy": "Product-first, clarity-first minimalism. Inspired by Stripe, Vercel, and Linear. Emphasizes technical trust through minimalist aesthetics, vast negative space, pure white backgrounds, subtle green brand accents, blueprint-style 1px borders, and refined micro-interactions. Zero unnecessary decorative elements.",
+  "typography": {
+    "primary_heading_font": "Outfit, sans-serif",
+    "secondary_body_font": "Manrope, sans-serif",
+    "technical_mono_font": "JetBrains Mono, monospace",
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl tracking-tighter font-medium text-zinc-950",
+      "h2": "text-3xl sm:text-4xl tracking-tight font-medium text-zinc-950",
+      "h3": "text-xl sm:text-2xl tracking-tight font-medium text-zinc-900",
+      "h4": "text-lg font-medium text-zinc-900",
+      "body": "text-base text-zinc-600 leading-relaxed",
+      "small_label": "text-xs font-mono tracking-[0.2em] uppercase text-zinc-500",
+      "nav_links": "text-sm font-medium text-zinc-600 hover:text-zinc-950 transition-colors"
+    },
+    "rules": [
+      "NEVER use Inter, Roboto, or Open Sans for headings.",
+      "Headings > 32px MUST use tracking-tight or tracking-tighter.",
+      "Overlines and technical labels MUST use the mono font, uppercase, with wide letter spacing."
+    ]
+  },
+  "colors": {
+    "background": "#FFFFFF",
+    "foreground": "#09090B",
+    "surface": "#FAFAFA",
+    "surface_hover": "#F4F4F5",
+    "border": "#E4E4E7",
+    "brand": {
+      "primary": "#16A34A",
+      "secondary": "#22C55E",
+      "accent": "#4ADE80",
+      "primary_foreground": "#FFFFFF"
+    },
+    "muted": {
+      "background": "#F4F4F5",
+      "foreground": "#71717A"
+    },
+    "rules": [
+      "Use #FFFFFF as the absolute primary background for a clean, sterile, high-end tech feel.",
+      "Use brand green (#16A34A) EXCLUSIVELY for primary actions (CTAs, active states, key data points).",
+      "Use extremely subtle grays (#FAFAFA to #F4F4F5) for section alternations or card backgrounds.",
+      "NEVER use full-screen color gradients. Stick to structural grayscale."
+    ]
+  },
+  "spacing_and_layout": {
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "section_padding": "py-24 md:py-32",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+    "card_padding": "p-8",
+    "rules": [
+      "Generous spacing: Use 2-3x more spacing than typical templates.",
+      "Grid Borders: Use 1px subtle borders (border-zinc-200) to create a 'blueprint/technical' structural grid.",
+      "Corners: Use tight border radii (rounded-lg or rounded-xl max) for a sharp, modern feel.",
+      "Do NOT center everything. Rely on left-alignment and asymmetrical grids to create visual tension."
+    ]
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-green-600 hover:bg-green-700 text-white rounded-md px-6 py-2.5 text-sm font-medium transition-all shadow-sm flex items-center gap-2",
+      "secondary": "bg-white border border-zinc-200 hover:bg-zinc-50 text-zinc-900 rounded-md px-6 py-2.5 text-sm font-medium transition-all flex items-center gap-2",
+      "ghost": "hover:bg-zinc-100 text-zinc-600 hover:text-zinc-900 rounded-md px-4 py-2 text-sm font-medium transition-colors"
+    },
+    "cards": {
+      "default": "bg-white border border-zinc-200 rounded-xl p-8 hover:shadow-md transition-shadow duration-300",
+      "glass": "backdrop-blur-xl bg-white/70 border border-zinc-200/50 shadow-sm"
+    },
+    "inputs": {
+      "default": "w-full bg-white border border-zinc-200 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-600 transition-all placeholder:text-zinc-400"
+    },
+    "navigation": {
+      "header": "fixed top-0 w-full z-50 backdrop-blur-xl bg-white/80 border-b border-zinc-200/50"
+    }
+  },
+  "motion_and_interactions": {
+    "rules": [
+      "Subtle micro-interactions only. No aggressive bouncing or heavy parallax.",
+      "Use Framer Motion for gentle fade-ups (y: 20, opacity: 0 -> y: 0, opacity: 1) on scroll.",
+      "Hover states on cards should slightly lift (-translate-y-1) and increase shadow.",
+      "SVG mockups should have drawing/tracing animations on initial load to emphasize 'technical process'."
+    ]
+  },
+  "media": {
+    "hero_abstract": {
+      "url": "https://images.pexels.com/photos/12732218/pexels-photo-12732218.jpeg",
+      "alt": "Abstract white 3D geometric shapes",
+      "usage": "Use as a subtle masked background for the hero section or high-end feature showcases."
+    },
+    "dashboard_mockup": {
+      "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      "alt": "Premium corporate dashboard analytics",
+      "usage": "Use in the portfolio grid or services catalog to demonstrate data/tech capabilities."
+    },
+    "mobile_mockup": {
+      "url": "https://images.unsplash.com/photo-1720135885007-454165745e21",
+      "alt": "Sleek mobile app interface on dark surface",
+      "usage": "Use in portfolio or mobile responsive feature section."
+    },
+    "modern_architecture": {
+      "url": "https://images.pexels.com/photos/13427393/pexels-photo-13427393.jpeg",
+      "alt": "Sleek modern architecture with green accents",
+      "usage": "Use in the 'About' or 'Process' section to represent structure and growth."
+    }
+  },
+  "pages_and_structure": {
+    "home_marketing": {
+      "hero": "Product-first. H1 title, technical mono overline. Action buttons. Right side: Interactive SVG mockup or abstract 3D visual.",
+      "social_proof": "Logo strip immediately below hero.",
+      "services_catalog": "Bento grid layout with 1px borders. Minimal icons (Lucide).",
+      "portfolio_grid": "Asymmetrical masonry or strict technical grid showing real product mockups.",
+      "process_timeline": "Vertical line with glowing active nodes on scroll.",
+      "contact_section": "Clean, highly structured form with right-side AI consultant entry point."
+    },
+    "admin_dashboard": {
+      "layout": "Sidebar navigation (dark or extremely light), top header.",
+      "content": "Dense, functional tables for leads. Use Recharts for simple lead volume metrics. Minimal padding, highly scannable."
+    },
+    "global_elements": {
+      "ai_consultant": "Floating bottom-right button opening a clean, glassmorphism chat interface.",
+      "footer": "Massive padding (py-32). Dark mode footer (bg-zinc-950 text-white) to create a sharp contrast ending to the light page."
+    }
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the color palette. Do NOT introduce new colors outside of the zinc grayscale and green brand palette.",
+    "Use standard HTML/Tailwind for marketing layouts. Reserve Shadcn UI strictly for the Contact Form, Admin Dashboard, and AI Chatbot elements.",
+    "For the 'Interactive SVG Mockup', build a raw SVG with framer-motion path drawing animations to simulate a blueprint or wireframe being drawn.",
+    "All interactive elements (buttons, inputs, links) MUST have a data-testid attribute.",
+    "Use 'lucide-react' for all icons.",
+    "Ensure 'Outfit' font is loaded for headings and 'Manrope' for body text (e.g., via Google Fonts in index.html).",
+    "Do NOT use placeholder images. Use the provided URLs in the 'media' object.",
+    "For company logos in the social proof section, use typography + Lucide icons (e.g., <Hexagon /> Acme) in a desaturated, opacity-50 style.",
+    "Ensure the AI Chatbot feels premium—use glassmorphism (backdrop-blur) and precise border lines, avoiding generic bulky chat bubbles."
+  ]
+}
