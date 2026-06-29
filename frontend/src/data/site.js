@@ -22,10 +22,6 @@ export const SITE = {
     mapEmbed:
       "https://www.google.com/maps?q=Shalimar+Complex+Kanakanady+Mangalore+575002&output=embed",
   },
-  badges: [
-    { label: "MSME Registered" },
-    { label: "ISO", pending: true },
-  ],
   // ── Social links — replace each url with your profile link ──────────────
   // Format:
   //   { name: "Instagram", icon: "Instagram", url: "https://instagram.com/YOUR_HANDLE" },

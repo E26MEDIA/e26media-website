@@ -16,30 +16,9 @@ export function Footer() {
           {/* Company */}
           <div className="lg:col-span-2 space-y-6">
             <BrandLogo variant="light" className="w-fit" />
-            <p className="text-sm text-zinc-500 font-body leading-relaxed max-w-sm">
+            <p className="text-base md:text-lg text-zinc-400 font-body leading-relaxed max-w-md">
               {SITE.description}
             </p>
-            {SITE.badges?.length > 0 && (
-              <div className="flex flex-wrap gap-2">
-                {SITE.badges.map((badge) => (
-                  <span
-                    key={badge.label}
-                    className={`inline-flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded border ${
-                      badge.pending
-                        ? "text-zinc-500 border-zinc-800 bg-zinc-900"
-                        : "text-green-400 border-green-800/60 bg-green-950/40"
-                    }`}
-                  >
-                    {badge.label}
-                    {badge.pending && (
-                      <span className="normal-case font-body font-normal text-zinc-600">
-                        (coming soon)
-                      </span>
-                    )}
-                  </span>
-                ))}
-              </div>
-            )}
             <div className="flex items-center gap-4 text-zinc-500">
               {SITE.social.map((s) => (
                 <a
