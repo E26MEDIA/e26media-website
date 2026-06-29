@@ -1,10 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { X, ArrowRight, CheckCircle2 } from "lucide-react";
+import { X, ArrowRight, CheckCircle2, ExternalLink } from "lucide-react";
+
+function ModalPreview({ project }) {
+  const [failed, setFailed] = useState(false);
+  const isApp = project.previewType === "app";
+
+  if (failed) {
+    return (
+      <div className="flex aspect-[16/9] items-center justify-center bg-gradient-to-br from-zinc-100 to-zinc-200 p-8">
+        <p className="font-heading text-lg font-semibold text-zinc-600">{project.title}</p>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={`overflow-hidden rounded-t-2xl bg-zinc-100 ${
+        isApp ? "flex aspect-[16/9] items-center justify-center bg-gradient-to-b from-zinc-50 to-zinc-100" : "aspect-[16/9]"
+      }`}
+    >
+      <img
+        src={project.image}
+        alt={project.title}
+        onError={() => setFailed(true)}
+        className={
+          isApp
+            ? "max-h-[70%] max-w-[70%] object-contain drop-shadow-lg"
+            : "h-full w-full object-cover object-top"
+        }
+      />
+    </div>
+  );
+}
 
 // Project details modal opened from a ProjectCard.
 export function ProjectModal({ project, onClose }) {
   if (!project) return null;
+
+  const isApp = project.previewType === "app";
+
   return (
     <div
       className="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6"
@@ -24,13 +59,7 @@ export function ProjectModal({ project, onClose }) {
           <X className="w-5 h-5" />
         </button>
 
-        <div className="aspect-[16/9] overflow-hidden bg-zinc-100 rounded-t-2xl">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover"
-          />
-        </div>
+        <ModalPreview project={project} />
 
         <div className="p-8 md:p-10 space-y-6 text-left">
           <div className="flex flex-wrap items-center gap-2">
@@ -42,12 +71,17 @@ export function ProjectModal({ project, onClose }) {
             </span>
           </div>
 
-          <h3
-            className="text-2xl sm:text-3xl font-heading font-semibold text-zinc-950 tracking-tight"
-            data-testid="project-modal-title"
-          >
-            {project.title}
-          </h3>
+          <div className="space-y-2">
+            <h3
+              className="text-2xl sm:text-3xl font-heading font-semibold text-zinc-950 tracking-tight"
+              data-testid="project-modal-title"
+            >
+              {project.title}
+            </h3>
+            {project.host && (
+              <p className="font-mono text-sm text-zinc-400">{project.host}</p>
+            )}
+          </div>
 
           <p className="text-base text-zinc-600 font-body leading-relaxed">
             {project.longDescription}
@@ -88,8 +122,8 @@ export function ProjectModal({ project, onClose }) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border border-zinc-200 hover:border-green-300 text-zinc-800 hover:text-green-600 rounded-md px-6 py-3 text-sm font-body font-semibold transition-all"
               >
-                Visit live project
-                <ArrowRight className="w-4 h-4" />
+                {isApp ? "Open on Play Store" : "Visit live website"}
+                <ExternalLink className="w-4 h-4" />
               </a>
             )}
             <Link
