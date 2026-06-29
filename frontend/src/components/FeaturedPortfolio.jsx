@@ -27,6 +27,9 @@ export function FeaturedPortfolio() {
             >
               Real Client Work, Real Business Results
             </h2>
+            <p className="text-sm text-zinc-500 font-body">
+              Live client websites, apps, and campaigns delivered by E26 Media.
+            </p>
           </div>
           <Link
             to="/portfolio"

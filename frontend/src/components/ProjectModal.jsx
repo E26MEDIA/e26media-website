@@ -80,7 +80,18 @@ export function ProjectModal({ project, onClose }) {
             ))}
           </div>
 
-          <div className="pt-4 border-t border-zinc-100">
+          <div className="pt-4 border-t border-zinc-100 flex flex-wrap items-center gap-3">
+            {project.url && (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-zinc-200 hover:border-green-300 text-zinc-800 hover:text-green-600 rounded-md px-6 py-3 text-sm font-body font-semibold transition-all"
+              >
+                Visit live project
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            )}
             <Link
               to="/contact"
               onClick={onClose}
