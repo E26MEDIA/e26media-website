@@ -8,7 +8,7 @@ const favicon = (domain) =>
 export const TESTIMONIALS = [
   {
     id: "rev-lamiya",
-    name: "Faisal Al-Khaleej",
+    name: "Mohammed Nouman",
     role: "Managing Director",
     company: "Lamiya Alkhaleej",
     logo: favicon("lamiyaalkhaleej.com"),
@@ -19,7 +19,7 @@ export const TESTIMONIALS = [
   },
   {
     id: "rev-abrar",
-    name: "Mohammed Abrar",
+    name: "Ashfaq & Munaf",
     role: "Founder",
     company: "Abrar Caterers",
     logo: favicon("abrarcaterers.com"),
@@ -41,7 +41,7 @@ export const TESTIMONIALS = [
   },
   {
     id: "rev-floriva",
-    name: "Sarah Mitchell",
+    name: "Elyes",
     role: "Founder",
     company: "Floriva Gifts",
     logo: favicon("florivagifts.com"),
@@ -52,7 +52,7 @@ export const TESTIMONIALS = [
   },
   {
     id: "rev-almirath",
-    name: "Khalid Al-Mansoori",
+    name: "Sadik",
     role: "Marketing Lead",
     company: "Al Mirath",
     logo: favicon("almirath.ae"),
@@ -63,7 +63,7 @@ export const TESTIMONIALS = [
   },
   {
     id: "rev-tawakkal-app",
-    name: "Ibrahim Khan",
+    name: "Abdul Rahman",
     role: "Product Owner",
     company: "Tawakkal Muslim App",
     logo:

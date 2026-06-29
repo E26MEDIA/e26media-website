@@ -10,7 +10,7 @@ export const SITE = {
   tagline: "Innovative Digital Solutions",
   url: "https://www.e26media.com",
   description:
-    "E26 Media is a leading software development and digital marketing company specializing in custom software development, website design and development, mobile app development, AI solutions, UI/UX design, cloud solutions, SEO, branding, and digital marketing services. We help startups, businesses, and enterprises build scalable, secure, and high-performance digital solutions that drive innovation, increase online visibility, and accelerate business growth.",
+    "E26 Media is a leading software development and digital marketing company delivering custom software, website development, mobile app development, AI solutions, UI/UX design, SEO, branding, and cloud solutions. We help businesses build innovative digital experiences that drive growth, efficiency, and long-term success.",
   contact: {
     phone: "+91 8495901407 | +91 7337753124",
     phoneRaw: "+918495901407",
