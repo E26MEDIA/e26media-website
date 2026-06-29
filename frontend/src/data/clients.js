@@ -20,7 +20,7 @@ export const CLIENTS = [
   {
     name: "Tawakkal Overseas",
     url: "https://www.tawakkalmuslim.com/",
-    logo: favicon("tawakkalmuslim.com"),
+    logo: "/client-logos/tawakkal-overseas.png",
   },
   {
     name: "Floriva Gifts",
