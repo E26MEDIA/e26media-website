@@ -136,7 +136,7 @@ export const SERVICES = [
     ],
     clientWork: [
       {
-        name: "FitTrack",
+        name: "Tawakkal Muslim App",
         url: "https://play.google.com/store/apps/details?id=com.tawakkalmuslim&hl=en_IN",
         image:
           "https://play-lh.googleusercontent.com/_L6Sb1W6ZD9NGNN0at3zbMVdrtV-Hiq4gbfjDLnaoM_Oz_TbZqX0Fd06UZqTmFFQrhOPcDwH8dVRtWHv_vxK",

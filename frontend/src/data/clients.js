@@ -1,7 +1,6 @@
 // ============================================================
 // CLIENT LOGOS — Home page marquee. Use `logo` for image path or URL.
-// Omit `logo` to fall back to site favicon via `url`. Add files under
-// frontend/public/client-logos/ for custom uploads (e.g. "/client-logos/abrar.png").
+// Add custom files under frontend/public/client-logos/
 // ============================================================
 
 const favicon = (domain) =>
@@ -19,7 +18,7 @@ export const CLIENTS = [
     logo: favicon("abrarcaterers.com"),
   },
   {
-    name: "Tawakkal Muslim",
+    name: "Tawakkal Overseas",
     url: "https://www.tawakkalmuslim.com/",
     logo: favicon("tawakkalmuslim.com"),
   },
@@ -39,8 +38,9 @@ export const CLIENTS = [
     logo: favicon("brightleaf.com"),
   },
   {
-    name: "FitTrack",
-    url: "https://play.google.com/store/apps/details?id=com.tawakkalmuslim",
-    logo: favicon("play.google.com"),
+    name: "Tawakkal Muslim App",
+    url: "https://play.google.com/store/apps/details?id=com.tawakkalmuslim&hl=en_IN",
+    logo:
+      "https://play-lh.googleusercontent.com/_L6Sb1W6ZD9NGNN0at3zbMVdrtV-Hiq4gbfjDLnaoM_Oz_TbZqX0Fd06UZqTmFFQrhOPcDwH8dVRtWHv_vxK",
   },
 ];
