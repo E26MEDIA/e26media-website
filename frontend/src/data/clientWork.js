@@ -3,27 +3,27 @@ import { SERVICES } from "./services";
 const SERVICE_META = {
   "web-design-development": {
     category: "Web Development",
-    tag: "Website",
-    stack: ["Responsive design", "SEO", "Fast performance"],
-    results: ["Live website", "Mobile-first", "Lead-ready"],
+    tag: "Client Website",
+    stack: ["React", "Responsive UI", "SEO"],
+    results: ["Live website", "Mobile-first", "Fast loading"],
   },
   "software-development": {
     category: "Software Development",
-    tag: "Ecommerce",
-    stack: ["Online store", "Secure checkout", "Order management"],
-    results: ["Store live", "Product catalog", "Checkout flow"],
+    tag: "Ecommerce Platform",
+    stack: ["Ecommerce", "Secure checkout", "Cloud hosted"],
+    results: ["Online store live", "Order flow", "Scalable build"],
   },
   "mobile-app-development": {
     category: "Mobile Apps",
-    tag: "Android app",
-    stack: ["Google Play", "Mobile UX", "Cross-device"],
-    results: ["Published app", "Play Store live", "User-ready"],
+    tag: "Mobile App",
+    stack: ["Android", "Google Play", "Native UX"],
+    results: ["Play Store live", "User-ready app", "Ongoing support"],
   },
   "digital-marketing": {
     category: "Digital Marketing",
-    tag: "Marketing",
-    stack: ["SEO", "Paid ads", "Brand growth"],
-    results: ["More reach", "Lead generation", "Brand visibility"],
+    tag: "Growth & Visibility",
+    stack: ["SEO", "Paid media", "Brand reach"],
+    results: ["More visibility", "Lead generation", "Brand growth"],
   },
 };
 
@@ -32,14 +32,6 @@ const slugify = (name) =>
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
-
-export function getProjectHost(url = "") {
-  return url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
-}
-
-export function getPreviewType(url = "") {
-  return /play\.google\.com|apps\.apple\.com/i.test(url) ? "app" : "website";
-}
 
 export function getAllClientWork() {
   const byUrl = new Map();
@@ -61,8 +53,7 @@ export function getAllClientWork() {
 }
 
 export function clientWorkToProject(work, index) {
-  const host = getProjectHost(work.url);
-  const previewType = getPreviewType(work.url);
+  const host = work.url.replace(/^https?:\/\/(www\.)?/, "").split("/")[0];
 
   return {
     id: slugify(work.name),
@@ -70,13 +61,8 @@ export function clientWorkToProject(work, index) {
     category: work.category,
     tag: work.tag,
     url: work.url,
-    host,
-    previewType,
-    description:
-      previewType === "app"
-        ? `Mobile app built and published for ${work.name}.`
-        : `${work.serviceTitle} delivered for ${work.name}.`,
-    longDescription: `E26 Media planned, built, and launched this ${work.serviceTitle.toLowerCase()} project for ${work.name}. The deliverable is live, aligned with the client's brand, and built to support real business goals.`,
+    description: `${work.serviceTitle} project for ${work.name} — live at ${host}.`,
+    longDescription: `E26 Media delivered this ${work.serviceTitle.toLowerCase()} project for ${work.name}. The work is live and supports their business goals with a professional digital presence, reliable performance, and a user experience built for real customers.`,
     image: work.image,
     stack: work.stack,
     results: work.results,
