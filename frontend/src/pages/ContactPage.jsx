@@ -46,9 +46,11 @@ export function ContactPage() {
                         <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-400">
                           {item.label}
                         </h4>
-                        <p className="font-heading font-medium text-zinc-900 text-base mt-0.5">
-                          {item.value}
-                        </p>
+                        <div className="font-heading font-medium text-zinc-900 text-base mt-0.5 space-y-0.5">
+                          {Array.isArray(item.value)
+                            ? item.value.map((line) => <p key={line}>{line}</p>)
+                            : item.value}
+                        </div>
                       </div>
                     </div>
                   );

@@ -3,7 +3,7 @@ import {
   Monitor, Cpu, Smartphone, TrendingUp,
   Users, Puzzle, ShieldCheck, Headphones,
   Landmark, ShoppingBag, Plane, Boxes, Zap, Orbit, Activity, Leaf,
-  Twitter, Linkedin, Instagram, Facebook,
+  Twitter, Linkedin, Instagram, Facebook, Github,
 } from "lucide-react";
 
 function PinterestIcon(props) {
@@ -18,7 +18,7 @@ const MAP = {
   Monitor, Cpu, Smartphone, TrendingUp,
   Users, Puzzle, ShieldCheck, Headphones,
   Landmark, ShoppingBag, Plane, Boxes, Zap, Orbit, Activity, Leaf,
-  Twitter, Linkedin, Instagram, Facebook,
+  Twitter, Linkedin, Instagram, Facebook, Github,
   Pinterest: PinterestIcon,
 };
 

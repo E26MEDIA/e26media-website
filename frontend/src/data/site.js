@@ -10,7 +10,7 @@ export const SITE = {
   tagline: "Innovative Digital Solutions",
   url: "https://www.e26media.com",
   description:
-    "We engineer world-class enterprise software, build responsive digital experiences, and run high-performance, results-focused marketing campaigns.",
+    "E26 Media helps businesses grow through custom software, modern websites, mobile applications, AI solutions, and performance-driven digital marketing.",
   contact: {
     phone: "+91 8495901407 | +91 7337753124",
     phoneRaw: "+918495901407",
@@ -18,10 +18,14 @@ export const SITE = {
     email: "hr@e26media.com",
     address:
       "5th Floor Shalimar Complex, Near Old Ganesh Medical, Kanakanady, Mangalore - 575002",
-    hours: "Monday – Friday, 9:00 AM – 6:00 PM IST",
+    hours: ["Mon – Sat: 9:30 AM – 6:30 PM", "Sunday Closed"],
     mapEmbed:
       "https://www.google.com/maps?q=Shalimar+Complex+Kanakanady+Mangalore+575002&output=embed",
   },
+  badges: [
+    { label: "MSME Registered" },
+    { label: "ISO", pending: true },
+  ],
   // ── Social links — replace each url with your profile link ──────────────
   // Format:
   //   { name: "Instagram", icon: "Instagram", url: "https://instagram.com/YOUR_HANDLE" },
@@ -34,6 +38,8 @@ export const SITE = {
     { name: "Facebook", icon: "Facebook", url: "https://www.facebook.com/share/1GhoNgokFj/?mibextid=wwXIfr" },
     { name: "LinkedIn", icon: "Linkedin", url: "https://www.linkedin.com/company/e26-media-production-private-limited/" },
     { name: "Pinterest", icon: "Pinterest", url: "https://pin.it/1sJCQbCio" },
+    { name: "Twitter", icon: "Twitter", url: "#" },
+    { name: "GitHub", icon: "Github", url: "#" },
   ],
 };
 

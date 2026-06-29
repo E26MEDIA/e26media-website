@@ -122,7 +122,11 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-400">Working Hours</h4>
-                  <p className="font-heading font-medium text-zinc-900 text-base mt-0.5">{SITE.contact.hours}</p>
+                  <div className="font-heading font-medium text-zinc-900 text-base mt-0.5 space-y-0.5">
+                    {SITE.contact.hours.map((line) => (
+                      <p key={line}>{line}</p>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
