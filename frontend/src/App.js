@@ -9,7 +9,6 @@ import { ServiceDetailPage } from "./pages/ServiceDetailPage";
 import { PortfolioPage } from "./pages/PortfolioPage";
 import { AboutPage } from "./pages/AboutPage";
 import { ContactPage } from "./pages/ContactPage";
-import { AdminDashboard } from "./components/AdminDashboard";
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Route>
-          <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
       </BrowserRouter>
       <Toaster position="top-right" richColors />

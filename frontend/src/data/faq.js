@@ -1,7 +1,5 @@
 // ============================================================
-// CHATBOT FAQ — 10 questions the AI consultant answers. Edit
-// freely. These are shown as quick-reply chips and the answers
-// are injected into the AI's knowledge so replies stay accurate.
+// CHATBOT FAQ — Quick-reply chips and answers for the on-site assistant.
 // ============================================================
 export const FAQS = [
   {
