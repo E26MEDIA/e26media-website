@@ -22,8 +22,6 @@ export const SERVICES = [
     tagline: "Conversion-focused web experiences",
     short:
       "We build fast, responsive, and visually stunning web experiences engineered to convert traffic into loyal business clients.",
-    heroImage:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
     overview:
       "From corporate flagship sites to high-volume ecommerce platforms, we design and engineer web products that load instantly, rank well, and convert. Every build is responsive, accessible, and tuned for Core Web Vitals.",
     offerings: [
@@ -39,12 +37,6 @@ export const SERVICES = [
       { title: "SEO Engineered", desc: "Semantic HTML and technical SEO baked into every page." },
       { title: "Pixel-Perfect Design", desc: "Premium, on-brand UI that builds instant trust." },
       { title: "Built To Scale", desc: "Modular architecture ready for long-term growth." },
-    ],
-    gallery: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-      "https://images.pexels.com/photos/7621358/pexels-photo-7621358.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "https://images.pexels.com/photos/6476253/pexels-photo-6476253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "https://images.pexels.com/photos/4841737/pexels-photo-4841737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     ],
     clientWork: [
       {
@@ -71,8 +63,6 @@ export const SERVICES = [
     tagline: "Enterprise systems that automate growth",
     short:
       "Empower your organization with tailored, highly scalable enterprise solutions that automate complex business processes.",
-    heroImage:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
     overview:
       "We architect bespoke business software — ERPs, CRMs, billing engines, and automation tools — that replace manual workflows with secure, real-time systems. Built on modern cloud infrastructure for reliability at scale.",
     offerings: [
@@ -89,12 +79,6 @@ export const SERVICES = [
       { title: "Enterprise Security", desc: "Role-based access, encryption, and audit trails." },
       { title: "Scalable Cloud", desc: "Infrastructure that grows with your operations." },
     ],
-    gallery: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-      "https://images.unsplash.com/photo-1686061594225-3e92c0cd51b0",
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43",
-      "https://images.pexels.com/photos/340152/pexels-photo-340152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    ],
     clientWork: [
       {
         name: "Floriva Gifts Ecommerce",
@@ -110,8 +94,6 @@ export const SERVICES = [
     tagline: "Native & cross-platform mobile apps",
     short:
       "Deliver powerful, seamless mobile user experiences on iOS and Android platforms engineered with modern codebases.",
-    heroImage:
-      "https://images.pexels.com/photos/35052818/pexels-photo-35052818.jpeg",
     overview:
       "We craft beautiful, performant mobile apps — native and Flutter cross-platform — with offline support, secure auth, and deep API integration. From consumer ecommerce apps to enterprise field tools.",
     offerings: [
@@ -127,12 +109,6 @@ export const SERVICES = [
       { title: "Native Performance", desc: "60fps interactions and instant launch times." },
       { title: "Secure By Design", desc: "Biometric login and encrypted data at rest." },
       { title: "Ongoing Support", desc: "Continuous updates and store compliance." },
-    ],
-    gallery: [
-      "https://images.pexels.com/photos/35052818/pexels-photo-35052818.jpeg",
-      "https://images.pexels.com/photos/35052791/pexels-photo-35052791.jpeg",
-      "https://images.unsplash.com/photo-1634403665481-74948d815f03",
-      "https://images.unsplash.com/photo-1629494893504-d41e26a02631",
     ],
     clientWork: [
       {
@@ -150,8 +126,6 @@ export const SERVICES = [
     tagline: "Data-driven growth & lead generation",
     short:
       "Drive predictable, results-focused business growth with data-driven paid advertising, organic search, and branding strategies.",
-    heroImage:
-      "https://images.pexels.com/photos/927576/pexels-photo-927576.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     overview:
       "We turn marketing spend into measurable revenue. Our team blends technical SEO, high-ROI paid media, and sharp branding to fill your pipeline with qualified leads — backed by transparent analytics.",
     offerings: [
@@ -167,12 +141,6 @@ export const SERVICES = [
       { title: "Measurable ROI", desc: "Transparent reporting tied to revenue, not vanity." },
       { title: "Full-Funnel Strategy", desc: "Awareness to conversion, all aligned." },
       { title: "Creative That Converts", desc: "Ad creative and copy built to perform." },
-    ],
-    gallery: [
-      "https://images.pexels.com/photos/927576/pexels-photo-927576.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "https://images.pexels.com/photos/12813050/pexels-photo-12813050.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74",
-      "https://images.pexels.com/photos/9553905/pexels-photo-9553905.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     ],
     clientWork: [
       {
@@ -193,6 +161,15 @@ export const SERVICES = [
     ],
   },
 ];
+
+// Hero + gallery images come from real client work only.
+for (const service of SERVICES) {
+  const images = (service.clientWork ?? []).map((c) => c.image).filter(Boolean);
+  if (images.length > 0) {
+    service.heroImage = images[0];
+    service.gallery = images;
+  }
+}
 
 export const getServiceBySlug = (slug) =>
   SERVICES.find((s) => s.slug === slug);

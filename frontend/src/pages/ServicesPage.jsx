@@ -37,7 +37,11 @@ export function ServicesPage() {
                     src={service.heroImage}
                     alt={service.title}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className={`w-full h-full transition-transform duration-700 group-hover:scale-105 ${
+                      service.slug === "mobile-app-development"
+                        ? "object-contain bg-zinc-50 p-8"
+                        : "object-cover object-top"
+                    }`}
                   />
                   <div className="absolute top-4 left-4 w-12 h-12 rounded-lg bg-white/90 backdrop-blur-md border border-zinc-200/50 flex items-center justify-center text-green-600 shadow-sm">
                     <Icon name={service.icon} className="w-6 h-6" />

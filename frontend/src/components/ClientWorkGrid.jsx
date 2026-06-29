@@ -12,13 +12,13 @@ export function ClientWorkGrid({ items, serviceTitle }) {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-left max-w-2xl mb-12 space-y-3">
           <p className="font-mono text-xs font-semibold tracking-[0.2em] uppercase text-green-600">
-            Client websites
+            Client projects
           </p>
           <h2 className="text-2xl sm:text-3xl font-heading font-medium text-zinc-950 tracking-tight">
             {serviceTitle} projects we&apos;ve delivered
           </h2>
           <p className="text-sm text-zinc-500 font-body">
-            A selection of live client sites built and maintained by E26 Media.
+            A selection of live client work built and maintained by E26 Media.
           </p>
         </div>
 
@@ -37,7 +37,11 @@ export function ClientWorkGrid({ items, serviceTitle }) {
                   src={client.image}
                   alt={`${client.name} website preview`}
                   loading="lazy"
-                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className={`w-full h-full ${
+                    client.url.includes("play.google.com")
+                      ? "object-contain bg-white p-6"
+                      : "object-cover object-top"
+                  } transition-transform duration-500 group-hover:scale-105`}
                 />
               </div>
               <div className="p-5 flex items-center justify-between gap-3">

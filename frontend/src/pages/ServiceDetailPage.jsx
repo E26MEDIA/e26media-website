@@ -69,7 +69,11 @@ export function ServiceDetailPage() {
             <img
               src={service.heroImage}
               alt={service.title}
-              className="w-full h-full object-cover"
+              className={`w-full h-full ${
+                service.slug === "mobile-app-development"
+                  ? "object-contain bg-zinc-50 p-8"
+                  : "object-cover object-top"
+              }`}
             />
           </div>
           <div className="space-y-5 text-left">

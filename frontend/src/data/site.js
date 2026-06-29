@@ -34,8 +34,8 @@ export const SITE = {
     { name: "Facebook", icon: "Facebook", url: "https://www.facebook.com/share/1GhoNgokFj/?mibextid=wwXIfr" },
     { name: "LinkedIn", icon: "Linkedin", url: "https://www.linkedin.com/company/e26-media-production-private-limited/" },
     { name: "Pinterest", icon: "Pinterest", url: "https://pin.it/1sJCQbCio" },
-    { name: "Twitter", icon: "Twitter", url: "#" },
-    { name: "GitHub", icon: "Github", url: "#" },
+    { name: "Twitter", icon: "Twitter", url: "https://x.com/e26media" },
+    { name: "GitHub", icon: "Github", url: "https://github.com/e26media" },
   ],
 };
 
