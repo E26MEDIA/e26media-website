@@ -16,7 +16,7 @@ export function Footer() {
           {/* Company */}
           <div className="lg:col-span-2 space-y-6">
             <BrandLogo variant="light" className="w-fit" />
-            <p className="text-base md:text-lg text-zinc-400 font-body leading-relaxed max-w-md">
+            <p className="text-sm text-zinc-500 font-body leading-relaxed max-w-xl">
               {SITE.description}
             </p>
             <div className="flex items-center gap-4 text-zinc-500">
