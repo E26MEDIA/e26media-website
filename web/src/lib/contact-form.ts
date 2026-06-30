@@ -3,17 +3,16 @@
 import { type FormEvent, useState } from "react";
 
 export async function submitContactForm(data: Record<string, string>) {
-  const url = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL;
-  if (!url) {
-    throw new Error("Contact form is not configured.");
-  }
-
-  await fetch(url, {
+  const res = await fetch("/api/contact", {
     method: "POST",
-    mode: "no-cors",
-    headers: { "Content-Type": "text/plain;charset=utf-8" },
-    body: JSON.stringify({ ...data, submittedAt: new Date().toISOString() }),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
   });
+
+  if (!res.ok) {
+    const payload = (await res.json().catch(() => null)) as { error?: string } | null;
+    throw new Error(payload?.error ?? "Submission failed. Please try again or call us directly.");
+  }
 }
 
 export function useContactForm() {

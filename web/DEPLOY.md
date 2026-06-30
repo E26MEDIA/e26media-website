@@ -6,7 +6,8 @@ Set in **Project Settings → Environment Variables**:
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `NEXT_PUBLIC_GOOGLE_SHEETS_URL` | Yes | Google Apps Script URL for contact form (same as V1) |
+| `GOOGLE_SHEETS_URL` | Yes (preferred) | Google Apps Script URL — server-side, works after redeploy |
+| `NEXT_PUBLIC_GOOGLE_SHEETS_URL` | Alt | Same URL; also supported for compatibility with V1 |
 
 Copy from V1 Vercel project or `.env.local`.
 
