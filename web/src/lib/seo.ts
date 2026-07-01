@@ -17,7 +17,7 @@ export function buildMetadata({
   noIndex,
 }: PageSEO): Metadata {
   const url = `${SITE.url}${path}`;
-  const ogImage = image ?? "/opengraph-image";
+  const ogImage = image ?? "/logo.png";
 
   return {
     title,

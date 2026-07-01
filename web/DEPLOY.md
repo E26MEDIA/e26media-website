@@ -1,35 +1,37 @@
 # E26 Media Website V2 — Deployment
 
-## Environment variables (Vercel)
+Use your **existing** Vercel project for `www.e26media.com`. Do **not** create a new project.
 
-Set in **Project Settings → Environment Variables**:
+## Existing Vercel project (update only)
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `GOOGLE_SHEETS_URL` | Yes (preferred) | Google Apps Script URL — server-side, works after redeploy |
-| `NEXT_PUBLIC_GOOGLE_SHEETS_URL` | Alt | Same URL; also supported for compatibility with V1 |
+1. Open [vercel.com/dashboard](https://vercel.com/dashboard) → your **existing** E26 Media / `web` project.
+2. **Settings → General → Root Directory** must be `web` (not repo root).
+3. **Settings → Git** should point to `e26media/e26media-website`, branch `main`.
+4. Push to `main` (already done) — Vercel auto-deploys, or click **Redeploy** on the latest deployment.
 
-Copy from V1 Vercel project or `.env.local`.
+## Environment variables (already on Vercel)
 
-## Deploy to Vercel
+Your V1 project likely already has one of these — **no new variable needed** unless the form fails:
 
-1. Push this repo to GitHub (`e26media/e26media-website`)
-2. Import project in [Vercel](https://vercel.com)
-3. Set **Root Directory** to `web`
-4. Framework preset: **Next.js** (auto-detected)
-5. Add `NEXT_PUBLIC_GOOGLE_SHEETS_URL`
-6. Deploy
+| Variable | Notes |
+|----------|--------|
+| `GOOGLE_SHEETS_URL` | Preferred for V2 (server-side) |
+| `NEXT_PUBLIC_GOOGLE_SHEETS_URL` | Same URL — V1 name, still works |
+
+V2 reads **either** name (`src/lib/sheets-url.ts`). If the contact form works on production today, leave env as-is.
+
+To add server-side var without changing the URL: duplicate the same Apps Script URL as `GOOGLE_SHEETS_URL` in the **same** project (no new Vercel project).
 
 ## Custom domain
 
-Point `www.e26media.com` to Vercel when ready to switch from V1 (`frontend/`).
+Already on the existing project: `e26media.com` / `www.e26media.com`. No DNS changes needed for a redeploy.
 
 ## Local development
 
 ```bash
 cd web
 cp .env.example .env.local
-# Add NEXT_PUBLIC_GOOGLE_SHEETS_URL
+# Paste the same GOOGLE_SHEETS / NEXT_PUBLIC URL from Vercel
 npm install
 npm run dev
 ```
@@ -37,6 +39,13 @@ npm run dev
 ## Production build
 
 ```bash
+cd web
 npm run build
 npm start
 ```
+
+## After deploy — quick checks
+
+- https://www.e26media.com
+- https://www.e26media.com/contact (submit test enquiry)
+- https://www.e26media.com/sitemap.xml
