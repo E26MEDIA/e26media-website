@@ -13,6 +13,8 @@ import { ProjectCard } from "@/components/portfolio/project-card";
 import { PORTFOLIO } from "@/data/portfolio";
 import { getGoogleSheetsUrl } from "@/lib/sheets-url";
 import { getLocationsByService } from "@/data/locations";
+import { SeoInternalLinks } from "@/components/seo/seo-internal-links";
+import { getServiceSeoLinks } from "@/lib/internal-links";
 
 type Props = {
   pillar: ServicePillar;
@@ -211,9 +213,16 @@ export function ServicePillarLayout({ pillar, category }: Props) {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/locations" className="text-sm font-medium text-green-700 hover:underline dark:text-green-400">
+                  All cities →
+                </Link>
+              </li>
             </ul>
           </section>
         )}
+
+        <SeoInternalLinks title="SEO resources & pricing" links={getServiceSeoLinks(category.slug).slice(0, 6)} />
 
         <section className="mx-auto max-w-3xl space-y-8">
           <SectionHeading

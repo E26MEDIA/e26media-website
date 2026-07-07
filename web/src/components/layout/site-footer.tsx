@@ -50,6 +50,21 @@ export function SiteFooter() {
                 Pricing
               </Link>
             </li>
+            <li>
+              <Link href="/media" className="hover:text-white">
+                Media Kit
+              </Link>
+            </li>
+            <li>
+              <Link href="/tools/website-cost-estimator" className="hover:text-white">
+                Cost Estimator
+              </Link>
+            </li>
+            <li>
+              <Link href="/locations" className="hover:text-white">
+                Service Areas
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -69,7 +84,7 @@ export function SiteFooter() {
         <div>
           <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-zinc-500">Areas we serve</h4>
           <ul className="space-y-2 text-sm">
-            {FOOTER_LOCATION_LINKS.slice(0, 8).map((l) => (
+            {FOOTER_LOCATION_LINKS.map((l) => (
               <li key={l.href}>
                 <Link href={l.href} className="hover:text-white">
                   {l.label}
@@ -77,8 +92,8 @@ export function SiteFooter() {
               </li>
             ))}
             <li>
-              <Link href="/locations/website-development-company-mangalore" className="text-green-400 hover:underline">
-                All locations →
+              <Link href="/locations" className="text-green-400 hover:underline">
+                All service areas →
               </Link>
             </li>
           </ul>

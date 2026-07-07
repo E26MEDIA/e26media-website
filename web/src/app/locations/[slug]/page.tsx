@@ -6,7 +6,9 @@ import { Card } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { ContactForm } from "@/components/forms/contact-form";
 import { getGoogleSheetsUrl } from "@/lib/sheets-url";
-import { FaqJsonLd } from "@/components/seo/json-ld";
+import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { SeoInternalLinks } from "@/components/seo/seo-internal-links";
+import { getLocationSeoLinks } from "@/lib/internal-links";
 import { LOCATIONS, getLocation } from "@/data/locations";
 import { SITE } from "@/data/site";
 import { TESTIMONIALS } from "@/data/testimonials";
@@ -40,6 +42,13 @@ export default async function LocationPage({ params }: Props) {
   return (
     <>
       <FaqJsonLd faqs={location.faqs} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Service Areas", path: "/locations" },
+          { name: location.title, path: `/locations/${slug}` },
+        ]}
+      />
 
       <section className="border-b border-zinc-200 dark:border-zinc-800">
         <Container className="py-16 md:py-24">
@@ -123,6 +132,11 @@ export default async function LocationPage({ params }: Props) {
             ))}
           </div>
         </div>
+
+        <SeoInternalLinks
+          title="More resources"
+          links={getLocationSeoLinks(location.serviceSlug, location.city)}
+        />
 
         <div className="space-y-6">
           <SectionHeading eyebrow="Visit us" title="E26 Media Head Office" />

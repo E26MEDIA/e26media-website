@@ -50,11 +50,11 @@ export default function KnowledgeHubPage() {
             <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Free checklists and templates for planning projects.</p>
             <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-green-600">Get downloads <ArrowRight className="h-4 w-4" /></span>
           </Link>
-          <Link href="/case-studies" className="group rounded-xl border border-zinc-200 bg-white p-8 transition hover:border-green-300 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-950">
+          <Link href="/tools/website-cost-estimator" className="group rounded-xl border border-zinc-200 bg-white p-8 transition hover:border-green-300 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-950">
             <Layers className="h-8 w-8 text-green-600" />
-            <h2 className="mt-4 font-heading text-xl font-semibold group-hover:text-green-600">Case Studies</h2>
-            <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Real client projects and business outcomes from E26 Media.</p>
-            <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-green-600">View work <ArrowRight className="h-4 w-4" /></span>
+            <h2 className="mt-4 font-heading text-xl font-semibold group-hover:text-green-600">Cost Estimator</h2>
+            <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Free website budget calculator for Karnataka — shareable and linkable.</p>
+            <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-green-600">Try the tool <ArrowRight className="h-4 w-4" /></span>
           </Link>
         </section>
 

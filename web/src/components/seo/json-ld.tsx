@@ -85,3 +85,61 @@ export function FaqJsonLd({ faqs }: { faqs: { question: string; answer: string }
     />
   );
 }
+
+export function BreadcrumbJsonLd({ items }: { items: { name: string; path: string }[] }) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: `${SITE.url}${item.path}`,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+export function ArticleJsonLd({
+  title,
+  description,
+  path,
+  datePublished,
+  author = "E26 Media Team",
+}: {
+  title: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  author?: string;
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    author: { "@type": "Organization", name: author, url: SITE.url },
+    publisher: {
+      "@type": "Organization",
+      name: SITE.legalName,
+      logo: { "@type": "ImageObject", url: `${SITE.url}/logo.png` },
+    },
+    datePublished,
+    dateModified: datePublished,
+    mainEntityOfPage: `${SITE.url}${path}`,
+    image: `${SITE.url}/logo.png`,
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}

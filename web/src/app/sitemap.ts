@@ -20,6 +20,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/knowledge/guides",
     "/knowledge/downloads",
     "/pricing",
+    "/media",
+    "/locations",
+    "/tools/website-cost-estimator",
     "/careers",
   ].map((path) => ({
     url: `${base}${path}`,

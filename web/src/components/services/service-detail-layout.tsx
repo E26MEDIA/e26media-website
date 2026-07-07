@@ -11,6 +11,9 @@ import { ContactForm } from "@/components/forms/contact-form";
 import { ProjectCard } from "@/components/portfolio/project-card";
 import { PORTFOLIO } from "@/data/portfolio";
 import { getGoogleSheetsUrl } from "@/lib/sheets-url";
+import { SeoInternalLinks } from "@/components/seo/seo-internal-links";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { getServiceSeoLinks } from "@/lib/internal-links";
 
 type Props = {
   enhancement: ServiceDetailEnhancement;
@@ -30,6 +33,14 @@ export function ServiceDetailLayout({ enhancement, category, item }: Props) {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: category.title, path: `/services/${category.slug}` },
+          { name: item.title, path: `/services/${category.slug}/${item.slug}` },
+        ]}
+      />
       <PageHero
         badge={category.title}
         title={item.title}
@@ -169,6 +180,11 @@ export function ServiceDetailLayout({ enhancement, category, item }: Props) {
             </div>
           </section>
         )}
+
+        <SeoInternalLinks
+          title="Local pages & resources"
+          links={getServiceSeoLinks(category.slug)}
+        />
 
         <section className="mx-auto max-w-3xl space-y-8">
           <SectionHeading

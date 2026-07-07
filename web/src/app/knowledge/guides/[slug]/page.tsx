@@ -6,7 +6,9 @@ import { BLOG_POSTS, getBlogPost } from "@/data/blogs";
 import { getKnowledgeCategoryForPost } from "@/data/knowledge";
 import { PageHero } from "@/components/visual/page-hero";
 import { CtaBand } from "@/components/visual/cta-band";
-import { FaqJsonLd } from "@/components/seo/json-ld";
+import { FaqJsonLd, ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { SeoInternalLinks } from "@/components/seo/seo-internal-links";
+import { getKnowledgeSeoLinks } from "@/lib/internal-links";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
@@ -50,6 +52,20 @@ export default async function KnowledgeGuidePage({ params }: Props) {
   return (
     <>
       {post.faqs && <FaqJsonLd faqs={post.faqs} />}
+      <ArticleJsonLd
+        title={post.title}
+        description={post.metaDescription}
+        path={`/knowledge/guides/${slug}`}
+        datePublished={post.date}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Knowledge Center", path: "/knowledge" },
+          { name: "Guides", path: "/knowledge/guides" },
+          { name: post.title, path: `/knowledge/guides/${slug}` },
+        ]}
+      />
 
       <PageHero badge={post.category} title={post.title} description={post.excerpt} />
 
@@ -132,6 +148,10 @@ export default async function KnowledgeGuidePage({ params }: Props) {
             <Link href="/contact" className={buttonVariants()}>
               Book consultation
             </Link>
+          </div>
+
+          <div className="mt-16">
+            <SeoInternalLinks title="Implement with E26 Media" links={getKnowledgeSeoLinks()} />
           </div>
         </div>
       </Container>
