@@ -3,12 +3,11 @@ import Image from "next/image";
 import { withLogoCache } from "@/lib/client-logo";
 import { NAV_LINKS, SITE } from "@/data/site";
 import { SERVICE_CATEGORIES } from "@/data/services";
-import { FOOTER_LOCATION_LINKS } from "@/data/locations";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-zinc-200 bg-zinc-950 text-zinc-400 dark:border-zinc-800">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-2 lg:grid-cols-6 md:px-12">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-2 lg:grid-cols-5 md:px-12">
         <div className="space-y-5 lg:col-span-2">
           <Image src={withLogoCache("/logo.png")} alt="E26 Media" width={160} height={48} className="h-10 w-auto" unoptimized />
           <p className="max-w-md text-sm leading-relaxed text-zinc-500">{SITE.description}</p>
@@ -45,57 +44,19 @@ export function SiteFooter() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link href="/pricing" className="hover:text-white">
-                Pricing
-              </Link>
-            </li>
-            <li>
-              <Link href="/media" className="hover:text-white">
-                Media Kit
-              </Link>
-            </li>
-            <li>
-              <Link href="/tools/website-cost-estimator" className="hover:text-white">
-                Cost Estimator
-              </Link>
-            </li>
-            <li>
-              <Link href="/locations" className="hover:text-white">
-                Service Areas
-              </Link>
-            </li>
           </ul>
         </div>
 
         <div>
           <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-zinc-500">Services</h4>
           <ul className="space-y-2 text-sm">
-            {SERVICE_CATEGORIES.slice(0, 6).map((c) => (
+            {SERVICE_CATEGORIES.map((c) => (
               <li key={c.slug}>
                 <Link href={`/services/${c.slug}`} className="hover:text-white">
                   {c.title}
                 </Link>
               </li>
             ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-zinc-500">Areas we serve</h4>
-          <ul className="space-y-2 text-sm">
-            {FOOTER_LOCATION_LINKS.map((l) => (
-              <li key={l.href}>
-                <Link href={l.href} className="hover:text-white">
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-            <li>
-              <Link href="/locations" className="text-green-400 hover:underline">
-                All service areas →
-              </Link>
-            </li>
           </ul>
         </div>
 
