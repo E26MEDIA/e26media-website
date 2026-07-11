@@ -6,7 +6,7 @@ import { PageHero } from "@/components/visual/page-hero";
 import { CtaBand } from "@/components/visual/cta-band";
 import { LongFormArticle } from "@/components/content/long-form-article";
 import { HUB_PAGE_CONTENT } from "@/data/long-form/hub-pages";
-import { LOCATIONS } from "@/data/service-areas";
+import { LOCATIONS } from "@/data/locations";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 const CONTENT = HUB_PAGE_CONTENT.locations;
