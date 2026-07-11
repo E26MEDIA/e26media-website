@@ -8,7 +8,7 @@ import { CtaBand } from "@/components/visual/cta-band";
 import { ServiceIcon } from "@/components/visual/service-icon";
 
 export const metadata = buildMetadata({
-  title: "Services | Web, Software, Mobile, AI, Cloud & Marketing — E26 Media",
+  title: "Services — Web, Software, Mobile, AI & Cloud",
   description:
     "Explore E26 Media services: website development, custom software, mobile apps, AI solutions, cloud, digital marketing, branding, UI/UX, and IT consulting.",
   path: "/services",

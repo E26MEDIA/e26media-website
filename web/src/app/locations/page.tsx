@@ -12,7 +12,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 const CONTENT = HUB_PAGE_CONTENT.locations;
 
 export const metadata = buildMetadata({
-  title: "Service Areas — Website & Software Company Across Karnataka | E26 Media",
+  title: "Service Areas Across Karnataka",
   description:
     "E26 Media serves Mangalore, Bengaluru, Udupi, Mysuru, Hubballi and beyond — website development, software, mobile apps, SEO, and digital marketing.",
   path: "/locations",

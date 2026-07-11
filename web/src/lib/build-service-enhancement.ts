@@ -148,7 +148,7 @@ export function buildServiceEnhancement(
   return {
     categorySlug: category.slug,
     serviceSlug: item.slug,
-    metaTitle: `${item.title} in Mangalore & Karnataka — E26 Media`,
+    metaTitle: `${item.title} in Mangalore | E26 Media`,
     metaDescription: `${item.tagline}. Professional ${item.title.toLowerCase()} for businesses in Mangalore, Bengaluru, and Karnataka. Free consultation — E26 Media.`,
     heroHighlight: item.title,
     intro: [

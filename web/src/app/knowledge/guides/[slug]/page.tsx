@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props) {
   const post = getBlogPost(slug);
   if (!post) return {};
   return buildMetadata({
-    title: `${post.title} — E26 Media Knowledge Center`,
+    title: post.title,
     description: post.metaDescription,
     path: `/knowledge/guides/${slug}`,
   });
