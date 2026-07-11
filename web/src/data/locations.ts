@@ -1,4 +1,5 @@
 import type { LocationPage } from "@/types";
+import { MANGALORE_WEB_DEVELOPMENT } from "@/data/locations/mangalore-web-development";
 
 type CityProfile = {
   name: string;
@@ -318,7 +319,7 @@ function buildLocation(
 }
 
 export const LOCATIONS: LocationPage[] = [
-  buildLocation("mangalore", "website-development", "website-development-company-mangalore"),
+  MANGALORE_WEB_DEVELOPMENT,
   buildLocation("mangalore", "software-development", "software-development-company-mangalore"),
   buildLocation("mangalore", "mobile-app-development", "mobile-app-development-company-mangalore"),
   buildLocation("mangalore", "ai-solutions", "ai-solutions-company-mangalore"),
