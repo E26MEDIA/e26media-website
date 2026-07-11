@@ -17,8 +17,8 @@ export const UI_UX_DESIGN_PILLAR: ServicePillar = {
     "Professional UI/UX design in Mangalore: wireframes, prototypes, app interfaces, dashboards, and design systems. Research-driven experiences for web and mobile.",
   hero: {
     badge: "UI/UX Design",
-    title: "Interfaces users understand on first visit",
-    highlight: "understand on first visit",
+    title: "UI/UX design users understand on first visit",
+    highlight: "UI/UX design",
     description:
       "Research-driven UI/UX for websites, mobile apps, and dashboards — wireframes, prototypes, and design systems that development teams can ship accurately.",
   },

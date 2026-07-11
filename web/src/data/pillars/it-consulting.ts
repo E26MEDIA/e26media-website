@@ -17,8 +17,8 @@ export const IT_CONSULTING_PILLAR: ServicePillar = {
     "IT consulting and digital transformation in Mangalore: technology roadmaps, product strategy, automation advisory, and startup consulting for Karnataka businesses.",
   hero: {
     badge: "IT Consulting",
-    title: "Technology strategy that matches your business goals",
-    highlight: "business goals",
+    title: "IT consulting aligned with your business goals",
+    highlight: "IT consulting",
     description:
       "Digital transformation, product strategy, and technology roadmaps — honest advisory from a team that also builds software, websites, and cloud infrastructure.",
   },

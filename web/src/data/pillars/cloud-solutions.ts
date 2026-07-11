@@ -17,8 +17,8 @@ export const CLOUD_SOLUTIONS_PILLAR: ServicePillar = {
     "Cloud migration, hosting, backup, and managed infrastructure in Mangalore. AWS, Azure, and Google Cloud expertise for Karnataka businesses scaling securely.",
   hero: {
     badge: "Cloud Solutions",
-    title: "Cloud infrastructure that scales with your business",
-    highlight: "scales with your business",
+    title: "Cloud solutions that scale with your business",
+    highlight: "Cloud solutions",
     description:
       "Migration, hosting, backup, and managed cloud on AWS, Azure, and Google Cloud — engineered for uptime, security, and predictable costs.",
   },

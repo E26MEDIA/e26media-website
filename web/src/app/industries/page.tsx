@@ -21,8 +21,8 @@ export default function IndustriesPage() {
     <>
       <PageHero
         badge="Industries"
-        title="Solutions tailored to your sector"
-        highlight="your sector"
+        title="Industries we serve across Karnataka"
+        highlight="Industries we serve"
         description="We understand industry-specific challenges and build technology that fits — from discovery through launch and support."
       />
 

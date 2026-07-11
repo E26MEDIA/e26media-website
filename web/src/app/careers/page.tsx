@@ -2,6 +2,7 @@ import Link from "next/link";
 import { buildMetadata } from "@/lib/seo";
 import { Container, SectionHeading } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
+import { PageHero } from "@/components/visual/page-hero";
 import { buttonVariants } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
 
@@ -28,13 +29,15 @@ const OPEN_POSITIONS = [
 
 export default function CareersPage() {
   return (
-    <Container className="py-16 md:py-24 space-y-16">
-      <SectionHeading
-        eyebrow="Careers"
-        title="Build remarkable digital products with us"
-        description="E26 Media is a Mangalore-based technology company helping businesses across Karnataka transform through websites, software, apps, and marketing."
+    <>
+      <PageHero
+        badge="Careers"
+        title="Careers at E26 Media — build with us"
+        highlight="Careers at E26 Media"
+        description="Join our Mangalore team building websites, software, mobile apps, and AI solutions for clients across Karnataka and beyond."
       />
 
+      <Container className="space-y-16 py-16 md:py-24">
       <div className="grid gap-6 lg:grid-cols-2">
         <Card>
           <h2 className="text-lg font-semibold">Our culture</h2>
@@ -86,6 +89,7 @@ export default function CareersPage() {
           Send your application
         </Link>
       </Card>
-    </Container>
+      </Container>
+    </>
   );
 }
