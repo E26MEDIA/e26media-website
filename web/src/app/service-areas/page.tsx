@@ -6,7 +6,7 @@ import { PageHero } from "@/components/visual/page-hero";
 import { CtaBand } from "@/components/visual/cta-band";
 import { LongFormArticle } from "@/components/content/long-form-article";
 import { HUB_PAGE_CONTENT } from "@/data/long-form/hub-pages";
-import { LOCATIONS } from "@/data/locations";
+import { LOCATIONS } from "@/data/service-areas";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 const CONTENT = HUB_PAGE_CONTENT.locations;
@@ -15,7 +15,7 @@ export const metadata = buildMetadata({
   title: "Service Areas Across Karnataka",
   description:
     "E26 Media serves Mangalore, Bengaluru, Udupi, Mysuru, Hubballi and beyond — website development, software, mobile apps, SEO, and digital marketing.",
-  path: "/locations",
+  path: "/service-areas",
 });
 
 export default function LocationsHubPage() {
@@ -29,7 +29,7 @@ export default function LocationsHubPage() {
       <BreadcrumbJsonLd
         items={[
           { name: "Home", path: "/" },
-          { name: "Service Areas", path: "/locations" },
+          { name: "Service Areas", path: "/service-areas" },
         ]}
       />
 
@@ -46,7 +46,7 @@ export default function LocationsHubPage() {
             <SectionHeading title={city} description={`${locations.length} service pages for ${city} businesses.`} />
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {locations.map((loc) => (
-                <Link key={loc.slug} href={`/locations/${loc.slug}`}>
+                <Link key={loc.slug} href={`/service-areas/${loc.slug}`}>
                   <Card className="h-full transition hover:border-green-300 hover:shadow-md">
                     <h3 className="font-semibold">{loc.title}</h3>
                     <p className="mt-2 line-clamp-2 text-sm text-zinc-600 dark:text-zinc-400">{loc.intro}</p>

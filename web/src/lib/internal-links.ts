@@ -28,7 +28,7 @@ const GUIDE_LINKS: InternalSeoLink[] = [
 export function getServiceSeoLinks(categorySlug: string): InternalSeoLink[] {
   const locations = getLocationsByService(categorySlug).slice(0, 4).map((loc) => ({
     label: loc.title,
-    href: `/locations/${loc.slug}`,
+    href: `/service-areas/${loc.slug}`,
     description: loc.city,
   }));
 
@@ -36,7 +36,7 @@ export function getServiceSeoLinks(categorySlug: string): InternalSeoLink[] {
     { label: "Transparent pricing", href: "/pricing", description: "Budget bands" },
     ...locations,
     ...GUIDE_LINKS.slice(0, 2),
-    { label: "All service areas", href: "/locations", description: "Karnataka cities" },
+    { label: "All service areas", href: "/service-areas", description: "Karnataka cities" },
   ];
 }
 
@@ -60,7 +60,7 @@ export function getLocationSeoLinks(serviceSlug: string, city: string): Internal
     }));
 
   return [
-    { label: `All ${city} services`, href: "/locations", description: "City pages" },
+    { label: `All ${city} services`, href: "/service-areas", description: "City pages" },
     { label: "Service overview", href: serviceHref, description: "Full capabilities" },
     { label: "Pricing", href: "/pricing", description: "Investment bands" },
     { label: "Case studies", href: "/case-studies", description: "Client outcomes" },
@@ -75,6 +75,6 @@ export function getKnowledgeSeoLinks(): InternalSeoLink[] {
     { label: "Software development", href: "/services/software-development" },
     { label: "Pricing", href: "/pricing" },
     { label: "Website cost estimator", href: "/tools/website-cost-estimator" },
-    { label: "Locations we serve", href: "/locations" },
+    { label: "Service areas we serve", href: "/service-areas" },
   ];
 }

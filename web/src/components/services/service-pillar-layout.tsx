@@ -206,7 +206,7 @@ export function ServicePillarLayout({ pillar, category }: Props) {
               {locationLinks.map((loc) => (
                 <li key={loc.slug}>
                   <Link
-                    href={`/locations/${loc.slug}`}
+                    href={`/service-areas/${loc.slug}`}
                     className="text-sm font-medium text-green-700 hover:underline dark:text-green-400"
                   >
                     {loc.city}
@@ -214,7 +214,7 @@ export function ServicePillarLayout({ pillar, category }: Props) {
                 </li>
               ))}
               <li>
-                <Link href="/locations" className="text-sm font-medium text-green-700 hover:underline dark:text-green-400">
+                <Link href="/service-areas" className="text-sm font-medium text-green-700 hover:underline dark:text-green-400">
                   All cities →
                 </Link>
               </li>

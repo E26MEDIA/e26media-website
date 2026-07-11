@@ -124,7 +124,7 @@ export const WEBSITE_DEVELOPMENT_PILLAR: ServicePillar = {
     "You own source code, hosting access, and documentation",
   ],
   process: PROCESS,
-  portfolioSlugs: ["lamiya-alkhaleej", "abrar-caterers", "floriva-gifts", "cleanpro", "alfiya", "layanproducts"],
+  portfolioSlugs: ["lamiya-alkhaleej", "abrar-caterers", "floriva-gifts", "cleanpro", "alfiya", "layan-products"],
   faqs: buildPillarFaqs("Website Development", [
     { question: "Do you build websites with WordPress?", answer: "Yes — when content teams need familiar editing workflows. We also build Next.js sites for maximum performance and recommend the stack based on your goals." },
     { question: "Is SEO included in website development?", answer: "Technical SEO — site speed, meta tags, schema, sitemap, mobile optimisation — is standard. Ongoing content SEO and link building are available as marketing retainers." },

@@ -163,7 +163,7 @@ export const WEBSITE_DETAIL_ENHANCEMENTS: ServiceDetailEnhancement[] = [
       "Transparent fixed quotes",
       "Same team from design to launch",
     ],
-    portfolioSlugs: ["abrar-caterers", "cleanpro", "alfiya", "layanproducts"],
+    portfolioSlugs: ["abrar-caterers", "cleanpro", "alfiya", "layan-products"],
     relatedSlugs: ["corporate-website", "landing-page", "website-redesign"],
     faqs: buildPillarFaqs("Business Website", [
       { question: "How fast can a business website go live?", answer: "4–8 weeks when content and approvals move quickly. Rush launches possible with reduced custom design scope." },

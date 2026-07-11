@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props) {
   return buildMetadata({
     title: location.metaTitle,
     description: location.metaDescription,
-    path: `/locations/${slug}`,
+    path: `/service-areas/${slug}`,
   });
 }
 
@@ -45,8 +45,8 @@ export default async function LocationPage({ params }: Props) {
       <BreadcrumbJsonLd
         items={[
           { name: "Home", path: "/" },
-          { name: "Service Areas", path: "/locations" },
-          { name: location.title, path: `/locations/${slug}` },
+          { name: "Service Areas", path: "/service-areas" },
+          { name: location.title, path: `/service-areas/${slug}` },
         ]}
       />
 

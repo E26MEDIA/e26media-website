@@ -703,7 +703,7 @@ export const CASE_STUDY_ENHANCEMENTS_PHASE2: CaseStudyEnhancement[] = [
     ],
   },
   {
-    slug: "layanproducts",
+    slug: "layan-products",
     metaTitle: "Layan Products Platform Case Study — B2B Product Catalogue | E26 Media",
     metaDescription: "Layan Products web platform by E26 Media — SEO-ready product catalogue and B2B layout for growing product lines in Karnataka.",
     intro: [

@@ -157,7 +157,7 @@ export const PORTFOLIO: PortfolioProject[] = [
     featured: false,
   },
   {
-    slug: "layanproducts",
+    slug: "layan-products",
     title: "Layan Products Platform",
     category: "website",
     client: "Layan Products",

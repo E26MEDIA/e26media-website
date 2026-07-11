@@ -342,5 +342,5 @@ export function getLocationsByService(serviceSlug: string) {
 
 export const FOOTER_LOCATION_LINKS = LOCATIONS.map((l) => ({
   label: l.title,
-  href: `/locations/${l.slug}`,
+  href: `/service-areas/${l.slug}`,
 }));

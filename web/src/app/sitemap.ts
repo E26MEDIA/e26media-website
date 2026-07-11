@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/knowledge/downloads",
     "/pricing",
     "/media",
-    "/locations",
+    "/service-areas",
     "/tools/website-cost-estimator",
     "/careers",
   ].map((path) => ({
@@ -70,7 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const locations = LOCATIONS.map((l) => ({
-    url: `${base}/locations/${l.slug}`,
+    url: `${base}/service-areas/${l.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.85,

@@ -16,6 +16,9 @@ const nextConfig = {
       { source: "/blog", destination: "/knowledge/guides", permanent: true },
       { source: "/blog/:slug", destination: "/knowledge/guides/:slug", permanent: true },
       { source: "/resources", destination: "/knowledge/downloads", permanent: true },
+      { source: "/locations", destination: "/service-areas", permanent: true },
+      { source: "/locations/:slug", destination: "/service-areas/:slug", permanent: true },
+      { source: "/portfolio/layanproducts", destination: "/portfolio/layan-products", permanent: true },
     ];
   },
   async headers() {
