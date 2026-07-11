@@ -4,10 +4,13 @@ import { Container } from "@/components/ui/section";
 import { ContactForm } from "@/components/forms/contact-form";
 import { getGoogleSheetsUrl } from "@/lib/sheets-url";
 import { FaqJsonLd } from "@/components/seo/json-ld";
-import { HOME_FAQS } from "@/data/faqs";
 import { PageHero } from "@/components/visual/page-hero";
+import { LongFormArticle } from "@/components/content/long-form-article";
+import { HUB_PAGE_CONTENT } from "@/data/long-form/hub-pages";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import Link from "next/link";
+
+const CONTENT = HUB_PAGE_CONTENT.contact;
 
 export const metadata = buildMetadata({
   title: "Contact E26 Media | Free Consultation",
@@ -24,7 +27,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <FaqJsonLd faqs={HOME_FAQS} />
+      {CONTENT.faqs && <FaqJsonLd faqs={CONTENT.faqs} />}
       <PageHero
         badge="Contact"
         title="Let's build something incredible together"
@@ -82,6 +85,10 @@ export default function ContactPage() {
             <p className="mb-8 text-sm text-zinc-600 dark:text-zinc-400">Share your project details and we&apos;ll get back within 24 business hours.</p>
             <ContactForm sheetsUrl={sheetsUrl} />
           </div>
+        </div>
+
+        <div className="mt-20 border-t border-zinc-200 pt-16 dark:border-zinc-800">
+          <LongFormArticle content={CONTENT} />
         </div>
       </Container>
     </>

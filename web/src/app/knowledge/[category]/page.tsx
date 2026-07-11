@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
-import { Container, SectionHeading } from "@/components/ui/section";
+import { Container } from "@/components/ui/section";
 import { KNOWLEDGE_CATEGORIES, getKnowledgeCategory, getPostsByKnowledgeCategory } from "@/data/knowledge";
+import { KNOWLEDGE_TOPIC_CONTENT } from "@/data/long-form/knowledge-topics";
 import { PageHero } from "@/components/visual/page-hero";
 import { CtaBand } from "@/components/visual/cta-band";
+import { LongFormArticle } from "@/components/content/long-form-article";
 import { KnowledgeGrid } from "@/components/knowledge/knowledge-grid";
+import { FaqJsonLd } from "@/components/seo/json-ld";
 import { buttonVariants } from "@/components/ui/button";
 
 type Props = { params: Promise<{ category: string }> };
@@ -43,9 +46,12 @@ export default async function KnowledgeCategoryPage({ params }: Props) {
 
   const posts = getPostsByKnowledgeCategory(category);
   const serviceHref = CATEGORY_SERVICE[category];
+  const content = KNOWLEDGE_TOPIC_CONTENT[category];
+  if (!content) notFound();
 
   return (
     <>
+      {content.faqs && <FaqJsonLd faqs={content.faqs} />}
       <PageHero badge="Knowledge Center" title={cat.title} description={cat.description} />
 
       {serviceHref && (
@@ -72,6 +78,10 @@ export default async function KnowledgeCategoryPage({ params }: Props) {
           </Link>
         </Container>
       )}
+
+      <Container className="py-16 md:py-24">
+        <LongFormArticle content={content} />
+      </Container>
 
       <CtaBand />
     </>

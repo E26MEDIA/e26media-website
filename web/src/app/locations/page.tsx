@@ -4,8 +4,12 @@ import { Container, SectionHeading } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
 import { PageHero } from "@/components/visual/page-hero";
 import { CtaBand } from "@/components/visual/cta-band";
+import { LongFormArticle } from "@/components/content/long-form-article";
+import { HUB_PAGE_CONTENT } from "@/data/long-form/hub-pages";
 import { LOCATIONS } from "@/data/locations";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+
+const CONTENT = HUB_PAGE_CONTENT.locations;
 
 export const metadata = buildMetadata({
   title: "Service Areas — Website & Software Company Across Karnataka | E26 Media",
@@ -54,7 +58,7 @@ export default function LocationsHubPage() {
         ))}
 
         <section className="rounded-xl border border-zinc-200 bg-zinc-50 p-8 dark:border-zinc-800 dark:bg-zinc-900">
-          <h2 className="font-heading text-xl font-semibold">Resources for local SEO</h2>
+          <h3 className="font-semibold">Resources for local growth</h3>
           <ul className="mt-4 grid gap-2 sm:grid-cols-2">
             <li>
               <Link href="/knowledge/guides/local-seo-mangalore-businesses" className="text-sm font-medium text-green-600 hover:underline">
@@ -78,6 +82,8 @@ export default function LocationsHubPage() {
             </li>
           </ul>
         </section>
+
+        <LongFormArticle content={CONTENT} />
       </Container>
 
       <CtaBand />

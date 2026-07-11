@@ -174,3 +174,9 @@ export type CaseStudyEnhancement = {
   testimonial?: string;
   faqs: FAQ[];
 };
+
+export type LongFormContent = {
+  intro?: string[];
+  sections: { heading: string; paragraphs: string[] }[];
+  faqs?: FAQ[];
+};

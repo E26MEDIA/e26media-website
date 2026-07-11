@@ -5,7 +5,11 @@ import { Container, SectionHeading } from "@/components/ui/section";
 import { buttonVariants } from "@/components/ui/button";
 import { PageHero } from "@/components/visual/page-hero";
 import { CtaBand } from "@/components/visual/cta-band";
+import { LongFormArticle } from "@/components/content/long-form-article";
+import { HUB_PAGE_CONTENT } from "@/data/long-form/hub-pages";
 import { BLOG_POSTS, KNOWLEDGE_CATEGORIES } from "@/data/knowledge";
+
+const HUB_CONTENT = HUB_PAGE_CONTENT.knowledge;
 
 export const metadata = buildMetadata({
   title: "Knowledge Center — E26 Media | Guides, Insights & Downloads",
@@ -107,6 +111,8 @@ export default function KnowledgeHubPage() {
             Book Free Consultation
           </Link>
         </section>
+
+        <LongFormArticle content={HUB_CONTENT} />
       </Container>
 
       <CtaBand />

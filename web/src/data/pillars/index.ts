@@ -5,6 +5,9 @@ import { AI_SOLUTIONS_PILLAR } from "./ai-solutions";
 import { MOBILE_APP_PILLAR } from "./mobile-app-development";
 import { DIGITAL_MARKETING_PILLAR, SEO_SERVICES_PILLAR } from "./digital-marketing";
 import { BRANDING_PILLAR } from "./branding";
+import { CLOUD_SOLUTIONS_PILLAR } from "./cloud-solutions";
+import { UI_UX_DESIGN_PILLAR } from "./ui-ux-design";
+import { IT_CONSULTING_PILLAR } from "./it-consulting";
 
 export const COMMERCIAL_PILLAR_SLUGS = [
   "website-development",
@@ -13,6 +16,9 @@ export const COMMERCIAL_PILLAR_SLUGS = [
   "mobile-app-development",
   "digital-marketing",
   "branding",
+  "cloud-solutions",
+  "ui-ux-design",
+  "it-consulting",
 ] as const;
 
 const PILLARS: Record<string, ServicePillar> = {
@@ -22,6 +28,9 @@ const PILLARS: Record<string, ServicePillar> = {
   "mobile-app-development": MOBILE_APP_PILLAR,
   "digital-marketing": DIGITAL_MARKETING_PILLAR,
   branding: BRANDING_PILLAR,
+  "cloud-solutions": CLOUD_SOLUTIONS_PILLAR,
+  "ui-ux-design": UI_UX_DESIGN_PILLAR,
+  "it-consulting": IT_CONSULTING_PILLAR,
   seo: SEO_SERVICES_PILLAR,
 };
 
