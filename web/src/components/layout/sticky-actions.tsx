@@ -1,10 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Phone } from "lucide-react";
 import { SITE } from "@/data/site";
-import { withLogoCache } from "@/lib/client-logo";
 
 export function StickyActions() {
   const whatsapp = `https://wa.me/${SITE.contact.whatsapp}?text=${encodeURIComponent(
@@ -15,17 +13,10 @@ export function StickyActions() {
     <div className="fixed bottom-5 right-5 z-40 flex flex-col gap-3 md:bottom-6 md:right-6">
       <a
         href={`tel:${SITE.contact.phoneRaw}`}
-        className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-zinc-950 shadow-lg ring-1 ring-white/10 transition hover:scale-105 dark:ring-white/20"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-950 text-white shadow-lg transition hover:scale-105 dark:bg-white dark:text-zinc-950"
         aria-label="Call E26 Media"
       >
-        <Image
-          src={withLogoCache("/logo-icon.png")}
-          alt=""
-          width={48}
-          height={48}
-          className="h-full w-full object-cover"
-          unoptimized
-        />
+        <Phone className="h-5 w-5" />
       </a>
       <a
         href={whatsapp}

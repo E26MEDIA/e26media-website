@@ -1,4 +1,4 @@
-const LOGO_CACHE_BUST = "20250626";
+const LOGO_CACHE_BUST = "20260720b";
 
 export function isLocalAsset(src: string) {
   return src.startsWith("/") && !src.startsWith("//");
