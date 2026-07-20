@@ -6,7 +6,7 @@ export const SITE = {
   tagline: "Premium Technology Partner",
   url: "https://www.e26media.com",
   description:
-    "E26 Media is a leading software development and digital marketing company delivering custom software, website development, mobile apps, AI solutions, cloud solutions, branding, and digital marketing for businesses across Karnataka and beyond.",
+    "E26 Media is a website, software, and mobile app development company in Mangalore and Bangalore — delivering custom websites, business software, apps, AI, and digital marketing across Karnataka.",
   contact: {
     phone: "+91 8495901407 | +91 7337753124",
     phoneRaw: "+918495901407",

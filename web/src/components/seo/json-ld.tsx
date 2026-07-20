@@ -158,6 +158,35 @@ export function ServiceJsonLd({
   );
 }
 
+export function WebSiteJsonLd() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE.name,
+    alternateName: SITE.legalName,
+    url: SITE.url,
+    description: SITE.description,
+    publisher: {
+      "@type": "Organization",
+      name: SITE.legalName,
+      url: SITE.url,
+      logo: `${SITE.url}/logo.png`,
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${SITE.url}/knowledge/guides?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
 export function ArticleJsonLd({
   title,
   description,
