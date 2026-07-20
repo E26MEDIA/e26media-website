@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { MessageCircle, Phone } from "lucide-react";
 import { SITE } from "@/data/site";
 
@@ -27,12 +26,6 @@ export function StickyActions() {
       >
         <MessageCircle className="h-5 w-5" />
       </a>
-      <Link
-        href="/contact"
-        className="hidden rounded-full bg-white px-4 py-3 text-xs font-semibold text-zinc-950 shadow-lg ring-1 ring-zinc-200 transition hover:scale-105 sm:inline-flex dark:bg-zinc-900 dark:text-white dark:ring-zinc-800"
-      >
-        Free Consultation
-      </Link>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, ArrowUpRight, CheckCircle2, Phone, Sparkles, Star } from "lucide-react";
+import { ArrowRight, ArrowUpRight, CheckCircle2, Phone, Sparkles } from "lucide-react";
 import { Container, SectionHeading } from "@/components/ui/section";
 import { buttonVariants } from "@/components/ui/button";
 import { SITE, STATS, TRUST_STATS } from "@/data/site";
@@ -21,6 +20,7 @@ import { CtaBand } from "@/components/visual/cta-band";
 import { ServiceIcon } from "@/components/visual/service-icon";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { ProjectCard } from "@/components/portfolio/project-card";
+import { TestimonialSlider } from "@/components/sections/testimonial-slider";
 
 const HeroMockup = dynamic(
   () => import("@/components/visual/hero-mockup").then((m) => m.HeroMockup),
@@ -44,14 +44,14 @@ export function HomePage() {
       <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }]} />
 
       {/* Hero */}
-      <section className="relative flex min-h-screen items-center overflow-hidden bg-white pt-28 pb-20 dark:bg-zinc-950 md:pt-36 md:pb-28">
+      <section className="relative overflow-hidden bg-white pt-20 pb-16 dark:bg-zinc-950 md:pt-24 md:pb-20">
         <div className="absolute inset-0 grid-bg pointer-events-none" />
         <div className="absolute top-1/4 left-1/4 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-200/20 blur-[80px]" />
         <div className="absolute bottom-1/4 right-1/4 h-[450px] w-[450px] translate-x-1/2 translate-y-1/2 rounded-full bg-emerald-200/10 blur-[100px]" />
 
         <Container className="relative z-10 w-full">
-          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
-            <div className="space-y-8 text-left lg:col-span-6">
+          <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-8">
+            <div className="space-y-6 text-left lg:col-span-6">
               <div className="inline-flex items-center gap-2 rounded-full border border-green-200/50 bg-green-50 px-3 py-1 font-mono text-xs uppercase tracking-wider text-green-700 dark:border-green-900 dark:bg-green-950/40 dark:text-green-400">
                 <Sparkles className="h-3.5 w-3.5" />
                 {HOME_SEO.heroEyebrow}
@@ -74,12 +74,9 @@ export function HomePage() {
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-wrap gap-3 pt-2">
+              <div className="flex flex-wrap gap-3 pt-1">
                 <Link href="/contact" className={buttonVariants({ size: "lg" })}>
                   Get Free Consultation <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link href="/contact" className={buttonVariants({ variant: "outline", size: "lg" })}>
-                  Request a Quote
                 </Link>
                 <Link href="/portfolio" className={buttonVariants({ variant: "outline", size: "lg" })}>
                   View Portfolio
@@ -312,34 +309,7 @@ export function HomePage() {
             title="Trusted by businesses in Mangalore, Bangalore & beyond"
             align="center"
           />
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {TESTIMONIALS.slice(0, 6).map((t) => (
-              <div key={t.id} className="flex flex-col rounded-xl border border-zinc-200 bg-zinc-50 p-8 dark:border-zinc-800 dark:bg-zinc-900/40">
-                <div className="mb-4 flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <p className="flex-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">&ldquo;{t.text}&rdquo;</p>
-                {t.service && (
-                  <span className="mt-4 inline-block w-fit rounded-full bg-green-50 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-green-700 dark:bg-green-950/40 dark:text-green-400">
-                    {t.service}
-                  </span>
-                )}
-                <div className="mt-6 flex items-center gap-3 border-t border-zinc-100 pt-4 dark:border-zinc-800">
-                  {t.logo && (
-                    <Image src={t.logo} alt={`${t.company} logo`} width={40} height={40} className="rounded-full" />
-                  )}
-                  <div>
-                    <p className="text-sm font-semibold">{t.name}</p>
-                    <p className="text-xs text-zinc-500">
-                      {t.role}, {t.company}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <TestimonialSlider testimonials={TESTIMONIALS.slice(0, 6)} />
         </Container>
       </section>
 
