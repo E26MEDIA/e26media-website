@@ -4,6 +4,7 @@ import { getAllServices } from "@/data/services";
 import { PORTFOLIO } from "@/data/portfolio";
 import { INDUSTRIES } from "@/data/industries";
 import { LOCATIONS } from "@/data/locations";
+import { CITY_SERVICE_PAGES } from "@/data/city-services";
 import { BLOG_POSTS, KNOWLEDGE_CATEGORIES } from "@/data/knowledge";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -73,14 +74,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}/service-areas/${l.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
-    priority: 0.85,
+    priority: 0.7,
+  }));
+
+  const cityServices = CITY_SERVICE_PAGES.map((p) => ({
+    url: `${base}${p.path}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.95,
   }));
 
   const guides = BLOG_POSTS.map((b) => ({
     url: `${base}/knowledge/guides/${b.slug}`,
-    lastModified: new Date(b.date),
+    lastModified: new Date(),
     changeFrequency: "monthly" as const,
-    priority: 0.7,
+    priority: 0.65,
   }));
 
   return [
@@ -90,6 +98,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...services,
     ...portfolio,
     ...industries,
+    ...cityServices,
     ...locations,
     ...guides,
   ];

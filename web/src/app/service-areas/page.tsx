@@ -7,6 +7,7 @@ import { CtaBand } from "@/components/visual/cta-band";
 import { LongFormArticle } from "@/components/content/long-form-article";
 import { HUB_PAGE_CONTENT } from "@/data/long-form/hub-pages";
 import { LOCATIONS } from "@/data/locations";
+import { CITY_SERVICE_PAGES } from "@/data/city-services";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 const CONTENT = HUB_PAGE_CONTENT.locations;
@@ -35,12 +36,33 @@ export default function LocationsHubPage() {
 
       <PageHero
         badge="Service Areas"
-        title="Technology partner across"
-        highlight="Karnataka"
+        title="Technology partner across Karnataka"
         description="City-specific service pages for businesses searching locally — each links to detailed capabilities, pricing, and consultation."
       />
 
       <Container className="space-y-16 py-16 md:py-24">
+        <section className="space-y-6">
+          <SectionHeading
+            title="Primary local landing pages"
+            description="SEO-focused pages for website, software, mobile, and digital marketing in Mangalore and Bangalore."
+          />
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {CITY_SERVICE_PAGES.map((page) => (
+              <Link key={page.path} href={page.path}>
+                <Card className="h-full transition hover:border-green-300 hover:shadow-md">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-green-600">
+                    {page.cityLabel}
+                  </p>
+                  <h3 className="mt-2 font-semibold">{page.serviceLabel}</h3>
+                  <p className="mt-2 line-clamp-2 text-sm text-zinc-600 dark:text-zinc-400">
+                    {page.h1}
+                  </p>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {Object.entries(byCity).map(([city, locations]) => (
           <section key={city} className="space-y-6">
             <SectionHeading title={city} description={`${locations.length} service pages for ${city} businesses.`} />

@@ -106,6 +106,58 @@ export function BreadcrumbJsonLd({ items }: { items: { name: string; path: strin
   );
 }
 
+export function ServiceJsonLd({
+  name,
+  description,
+  path,
+  city,
+  serviceType,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  city: string;
+  serviceType: string;
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    serviceType,
+    url: `${SITE.url}${path}`,
+    provider: {
+      "@type": "Organization",
+      name: SITE.legalName,
+      url: SITE.url,
+      telephone: SITE.contact.phoneRaw,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: SITE.contact.address,
+        addressLocality: "Mangalore",
+        addressRegion: "Karnataka",
+        postalCode: "575002",
+        addressCountry: "IN",
+      },
+    },
+    areaServed: {
+      "@type": "City",
+      name: city,
+      containedInPlace: {
+        "@type": "State",
+        name: "Karnataka",
+      },
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
 export function ArticleJsonLd({
   title,
   description,

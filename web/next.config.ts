@@ -19,6 +19,31 @@ const nextConfig = {
       { source: "/locations", destination: "/service-areas", permanent: true },
       { source: "/locations/:slug", destination: "/service-areas/:slug", permanent: true },
       { source: "/portfolio/layanproducts", destination: "/portfolio/layan-products", permanent: true },
+      {
+        source: "/service-areas/website-development-company-mangalore",
+        destination: "/website-development/mangalore",
+        permanent: true,
+      },
+      {
+        source: "/service-areas/website-development-company-bengaluru",
+        destination: "/website-development/bangalore",
+        permanent: true,
+      },
+      {
+        source: "/service-areas/software-development-company-mangalore",
+        destination: "/software-development/mangalore",
+        permanent: true,
+      },
+      {
+        source: "/service-areas/mobile-app-development-company-mangalore",
+        destination: "/mobile-app-development/mangalore",
+        permanent: true,
+      },
+      {
+        source: "/service-areas/digital-marketing-agency-mangalore",
+        destination: "/digital-marketing/mangalore",
+        permanent: true,
+      },
     ];
   },
   async headers() {

@@ -10,7 +10,7 @@ import { KnowledgeGrid } from "@/components/knowledge/knowledge-grid";
 const CONTENT = HUB_PAGE_CONTENT["knowledge-guides"];
 
 export const metadata = buildMetadata({
-  title: "Guides & Articles — E26 Media Knowledge Center",
+  title: "Business Technology Guides & Articles for Karnataka",
   description:
     "Expert guides on website development, software, SEO, AI, and digital marketing for Karnataka businesses from E26 Media.",
   path: "/knowledge/guides",

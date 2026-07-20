@@ -28,12 +28,24 @@ export async function generateStaticParams() {
   return KNOWLEDGE_CATEGORIES.filter((c) => c.type === "topic").map((c) => ({ category: c.slug }));
 }
 
+const KNOWLEDGE_TOPIC_TITLES: Record<string, string> = {
+  ai: "AI & Automation Guides for Karnataka Businesses",
+  branding: "Branding & Identity Guides for Karnataka Startups",
+  cloud: "Cloud Hosting & Migration Guides for Karnataka",
+  marketing: "Digital Marketing Guides for Karnataka SMEs",
+  mobile: "Mobile App Development Guides for Karnataka",
+  seo: "SEO & Local Search Guides for Karnataka Businesses",
+  software: "Custom Software Guides for Karnataka Businesses",
+  "website-development": "Website Development Guides for Karnataka Businesses",
+};
+
 export async function generateMetadata({ params }: Props) {
   const { category } = await params;
   const cat = getKnowledgeCategory(category);
   if (!cat) return {};
+  const title = KNOWLEDGE_TOPIC_TITLES[category] ?? `${cat.title} Guides for Karnataka Businesses`;
   return buildMetadata({
-    title: `${cat.title} Guides — E26 Media Knowledge Center`,
+    title,
     description: cat.description,
     path: `/knowledge/${category}`,
   });
